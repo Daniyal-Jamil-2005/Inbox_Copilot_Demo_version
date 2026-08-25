@@ -5,6 +5,10 @@
 [![LLM Agent](https://img.shields.io/badge/AI_Agent-Cerebras_llama3.1--8b-FF6B6B)](https://cerebras.ai)
 [![Demo Mode](https://img.shields.io/badge/Demo_Mode-Database--Free_State-4ADE80)](https://github.com/Daniyal-Jamil-2005/Inbox_Copilot_Demo)
 
+> [!IMPORTANT]
+> **Full-Stack Production Repository**: This repo is the standalone, database-free **Portfolio Demonstration Edition**. The complete full-stack production codebase (supporting MySQL, Neo4j knowledge graphs, multi-backend support, and full enterprise architecture) is available at:
+> 🔗 **[github.com/Daniyal-Jamil-2005/Inbox_Copilot](https://github.com/Daniyal-Jamil-2005/Inbox_Copilot)**
+
 An AI-powered email and inbox intelligence application designed for university students to automatically parse, classify, and deterministically rank opportunities (internships, scholarships, hackathons, grants, fellowships) against their student vector profile.
 
 This repository is a **standalone, recruiter-friendly Portfolio Demonstration** version of the main [Inbox Copilot](https://github.com/Daniyal-Jamil-2005/Inbox_Copilot) project.
