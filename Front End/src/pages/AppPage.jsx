@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import API_CONFIG from '../config';
 import AnalyticsDashboard from '../components/AnalyticsDashboard';
@@ -1700,7 +1700,7 @@ function ReportView({ scanData }) {
       .then(r => r.ok ? r.json() : r.text().then(t => Promise.reject(t)))
       .then(data => { setCharts(data.charts); setLoading(false); })
       .catch(err => { setError(String(err)); setLoading(false); });
-  }, [scanData.ranked.length, mode]);
+  }, [hasData, mode, scanData.profile, scanData.ranked]);
 
   const sectionStyle = {
     padding: '48px',
@@ -1823,7 +1823,7 @@ export default function AppPage() {
     if (!userId) navigate('/auth', { replace: true });
   }, [navigate]);
 
-  async function handleScanComplete(data) {
+  const handleScanComplete = useCallback((data) => {
     setScanData({
       ranked: data.ranked_opportunities || data.ranked || [],
       discarded: data.discarded || [],
@@ -1846,7 +1846,7 @@ export default function AppPage() {
     }
     
     setActivePage('results');
-  }
+  }, []);
 
   // Check if we received scan results from EmailScanPage
   useEffect(() => {
@@ -1856,7 +1856,7 @@ export default function AppPage() {
       // Clear the location state to prevent re-triggering
       window.history.replaceState({}, document.title);
     }
-  }, [location.state]);
+  }, [location.state, handleScanComplete]);
 
   // Check for inbox scan results in localStorage
   useEffect(() => {
@@ -1962,7 +1962,7 @@ export default function AppPage() {
         }
       }
     }
-  }, [location.search]);
+  }, [location.search, handleScanComplete]);
 
   const stats = {
     show: scanData.ranked.length > 0 || scanData.discarded.length > 0,
