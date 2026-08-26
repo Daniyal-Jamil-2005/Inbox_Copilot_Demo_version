@@ -10,9 +10,16 @@ Requirements validated: 9.2, 9.3, 9.6
 """
 
 from typing import List, Dict, Any, Optional
-from google.oauth2.credentials import Credentials
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
+try:
+    from google.oauth2.credentials import Credentials
+    from googleapiclient.discovery import build
+    from googleapiclient.errors import HttpError
+    HAS_GOOGLE_OAUTH = True
+except ImportError:
+    Credentials = None
+    build = None
+    HttpError = Exception
+    HAS_GOOGLE_OAUTH = False
 import base64
 import email
 from email.mime.text import MIMEText
