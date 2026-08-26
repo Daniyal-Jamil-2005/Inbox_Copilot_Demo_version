@@ -15,8 +15,9 @@ backend_module = importlib.util.module_from_spec(spec)
 sys.modules["backend_main"] = backend_module
 spec.loader.exec_module(backend_module)
 
-# Expose app
+# Expose app and load_synthetic_emails
 app = backend_module.app
+load_synthetic_emails = getattr(backend_module, "load_synthetic_emails", None)
 
 if __name__ == "__main__":
     import uvicorn

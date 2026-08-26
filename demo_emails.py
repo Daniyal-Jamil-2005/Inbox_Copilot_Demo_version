@@ -1,0 +1,273 @@
+"""
+Synthetic Demo Email Dataset for Opportunity Inbox Copilot
+Embedded as a Python module for 100% reliability in serverless environments (Vercel/AWS Lambda).
+"""
+
+SYNTHETIC_EMAILS_DATA = [
+  {
+    "id": "email-001",
+    "subject": "Remote Cloud Security Internship – Apply Now!",
+    "from": "hr@cloudsec.pk",
+    "date": "2026-08-20T10:00:00Z",
+    "body": "Subject: Remote Cloud Security Internship – Apply Now!\nFrom: hr@cloudsec.pk\n\nHi there,\nCloudSec Pakistan is offering a 2-month remote internship in Cloud Security.\nSkills required: Python, AWS, Cloud Security, Linux.\nDeadline: in 3 days. Minimum CGPA: 3.0.\nRequired documents: Resume, Transcript.\nApply at: https://cloudsec.pk/intern\nContact: hr@cloudsec.pk"
+  },
+  {
+    "id": "email-002",
+    "subject": "National Cybersecurity Hackathon 2026",
+    "from": "hackathon@nca.gov.pk",
+    "date": "2026-08-19T14:30:00Z",
+    "body": "Subject: National Cybersecurity Hackathon 2026\nFrom: hackathon@nca.gov.pk\n\nDear Student,\nYou are invited to the National Cybersecurity Hackathon hosted by NCA Pakistan.\nOpen to teams of 1-3. All degrees welcome.\nLocation: Remote (Online).\nDeadline: in 10 days.\nPrize pool: PKR 500,000.\nRegistration: https://nca.gov.pk/hackathon\nContact: hackathon@nca.gov.pk"
+  },
+  {
+    "id": "email-003",
+    "subject": "LUMS Merit Scholarship – Final Year Students",
+    "from": "admissions@lums.edu.pk",
+    "date": "2026-08-18T09:15:00Z",
+    "body": "Subject: LUMS Merit Scholarship – Final Year Students\nFrom: admissions@lums.edu.pk\n\nDear Applicant,\nLUMS is offering a full merit scholarship for exceptional final-year undergraduate students.\nRequired CGPA: 3.5+.\nOpen to: BSCS, BSEE, BSMath students only.\nDeadline: May 30, 2026.\nRequired documents: Transcript, Two recommendation letters, Statement of Purpose.\nApply: https://lums.edu.pk/scholarship\nFinancial award: Full tuition + stipend. This IS a scholarship."
+  },
+  {
+    "id": "email-004",
+    "subject": "Google Summer of Code 2026 – Open Source Internship",
+    "from": "gsoc-support@google.com",
+    "date": "2026-08-17T16:00:00Z",
+    "body": "Subject: Google Summer of Code 2026 – Open Source Internship\nFrom: gsoc-support@google.com\n\nHello Developer,\nGoogle Summer of Code (GSoC) is accepting applications from university students worldwide.\nYou will work on an open-source project with a mentor for 10 weeks.\nStipend: USD 1,500–3,300.\nDeadline: in 25 days.\nSkills preferred: Python, Machine Learning, Algorithms, Git.\nApply at: https://summerofcode.withgoogle.com\nOpen to all degrees and all years."
+  },
+  {
+    "id": "email-005",
+    "subject": "AI Research Fellowship – Tokyo Institute of Technology",
+    "from": "fellowship@titech.ac.jp",
+    "date": "2026-08-16T11:20:00Z",
+    "body": "Subject: AI Research Fellowship – Tokyo Institute of Technology\nFrom: fellowship@titech.ac.jp\n\nDear Student,\nTokyo Tech is inviting applications for its AI Research Fellowship (6 months, on-site in Tokyo).\nMinimum requirements: CGPA 3.5+, N5 Japanese language certification mandatory.\nDeadline: in 60 days.\nRequired: Resume, Research proposal, Two recommendation letters, Language certificate.\nApply: https://titech.ac.jp/fellowship"
+  },
+  {
+    "id": "email-006",
+    "subject": "Data Science Internship – Xord (Lahore)",
+    "from": "careers@xord.com",
+    "date": "2026-08-15T08:45:00Z",
+    "body": "Subject: Data Science Internship – Xord (Lahore)\nFrom: careers@xord.com\n\nHi,\nXord is hiring a Data Science intern for a 3-month position at our Lahore office.\nRequirements: Python, Pandas, ML basics, Machine Learning.\nCGPA requirement: 2.8 minimum.\nDeadline: in 7 days.\nSend your CV to: careers@xord.com"
+  },
+  {
+    "id": "email-007",
+    "subject": "HEC Need-Based Scholarship 2026",
+    "from": "scholarships@hec.gov.pk",
+    "date": "2026-08-14T13:10:00Z",
+    "body": "Subject: HEC Need-Based Scholarship 2026\nFrom: scholarships@hec.gov.pk\n\nDear Student,\nThe Higher Education Commission (HEC) Pakistan is offering need-based scholarships to deserving undergraduate students.\nEligibility: Financial need, CGPA 2.5+, Pakistani citizen.\nAward: Full tuition coverage.\nDeadline: June 15, 2026.\nRequired documents: Income certificate, CNIC copy, Transcript, Application form.\nApply online: https://hec.gov.pk/scholarships\nThis is a scholarship and grant program."
+  },
+  {
+    "id": "email-008",
+    "subject": "Microsoft AI Skills Challenge – Win Free Certifications",
+    "from": "aichallenge@microsoft.com",
+    "date": "2026-08-13T15:00:00Z",
+    "body": "Subject: Microsoft AI Skills Challenge – Win Free Certifications\nFrom: aichallenge@microsoft.com\n\nDear Tech Enthusiast,\nJoin Microsoft's AI Skills Challenge and earn free Azure AI certifications!\nOpen to everyone. No fees. No restrictions.\nComplete learning paths online at your own pace.\nChallenge period: Ends in 14 days.\nLink: https://microsoft.com/ai-challenge"
+  },
+  {
+    "id": "email-009",
+    "subject": "Devsinc Frontend Internship – React Developer Needed",
+    "from": "recruitment@devsinc.com",
+    "date": "2026-08-12T10:30:00Z",
+    "body": "Subject: Devsinc Frontend Internship – React Developer Needed\nFrom: recruitment@devsinc.com\n\nHi,\nDevsinc is looking for a Frontend Intern with React.js skills.\nLocation: Lahore (On-site).\nDuration: 2 months.\nDeadline: in 5 days.\nStipend: PKR 25,000/month.\nRequired: Resume, GitHub profile.\nApply: https://devsinc.com/careers"
+  },
+  {
+    "id": "email-010",
+    "subject": "PIEAS Research Grant for Final Year Projects",
+    "from": "research@pieas.edu.pk",
+    "date": "2026-08-11T12:00:00Z",
+    "body": "Subject: PIEAS Research Grant for Final Year Projects\nFrom: research@pieas.edu.pk\n\nDear Senior Student,\nPIEAS is offering research grants for BSCS and BSEE final-year students working on AI or Cybersecurity projects.\nGrant amount: PKR 100,000.\nMust be in semester 7 or 8.\nGraduation year restriction: 2026.\nDeadline: in 21 days.\nRequired: Project proposal, Faculty endorsement letter.\nApply: research@pieas.edu.pk\nThis is a grant."
+  },
+  {
+    "id": "email-011",
+    "subject": "Full-Stack Developer Job Opening – Systems Limited",
+    "from": "careers@systemsltd.com",
+    "date": "2026-08-10T09:00:00Z",
+    "body": "Subject: Full-Stack Developer Job Opening – Systems Limited\nFrom: careers@systemsltd.com\n\nDear Applicant,\nSystems Limited is recruiting Associate Full-Stack Developers for our Lahore and Karachi hubs.\nSkills: React, Node.js, Python, SQL, REST APIs.\nMinimum CGPA: 3.0. Degree: BSCS / BSSE.\nSalary: PKR 120,000/month.\nDeadline: in 12 days.\nApply at: https://systemsltd.com/careers"
+  },
+  {
+    "id": "email-012",
+    "subject": "Backend Engineering Internship – Arbisoft",
+    "from": "talent@arbisoft.com",
+    "date": "2026-08-09T14:15:00Z",
+    "body": "Subject: Backend Engineering Internship – Arbisoft\nFrom: talent@arbisoft.com\n\nHello Developers,\nArbisoft Fresh Grad & Student Internship program for Backend Engineers is now open!\nTechnologies: Python, Django, FastAPI, PostgreSQL.\nLocation: Lahore (Hybrid).\nDeadline: in 8 days.\nApply: https://arbisoft.com/internships"
+  },
+  {
+    "id": "email-013",
+    "subject": "Global Student Entrepreneurship Challenge – $10,000 Prize",
+    "from": "competition@e-cell.org",
+    "date": "2026-08-08T17:40:00Z",
+    "body": "Subject: Global Student Entrepreneurship Challenge – $10,000 Prize\nFrom: competition@e-cell.org\n\nAttention Student Founders!\nPitch your tech startup idea at the Global Student Entrepreneurship Challenge 2026.\nFirst Prize: USD 10,000 equity-free seed grant.\nLocation: Online / Remote pitch.\nDeadline: in 18 days.\nRegistration link: https://e-cell.org/gsec2026"
+  },
+  {
+    "id": "email-014",
+    "subject": "ML Research Assistantship – FAST National University",
+    "from": "cs-lab@nu.edu.pk",
+    "date": "2026-08-07T11:00:00Z",
+    "body": "Subject: ML Research Assistantship – FAST National University\nFrom: cs-lab@nu.edu.pk\n\nDear Students,\nThe AI & Vision Lab at FAST Lahore is hiring a Research Assistant for a funded NLP/LLM project.\nStipend: PKR 40,000/month.\nRequirements: Strong Python, PyTorch/TensorFlow, ML fundamentals, CGPA 3.2+.\nDeadline: in 6 days.\nEmail CV and transcript to: cs-lab@nu.edu.pk"
+  },
+  {
+    "id": "email-015",
+    "subject": "IEEE CodeCraft Hackathon 2026",
+    "from": "ieee@nu.edu.pk",
+    "date": "2026-08-06T16:20:00Z",
+    "body": "Subject: IEEE CodeCraft Hackathon 2026\nFrom: ieee@nu.edu.pk\n\nGet ready for CodeCraft 2026, a 24-hour hackathon hosted by IEEE Student Branch.\nTracks: Web3, AI Solutions, Cloud Infrastructure.\nPrize Pool: PKR 200,000 + Internship vouchers.\nDeadline: in 4 days.\nSign up at: https://ieee-codecraft2026.devpost.com"
+  },
+  {
+    "id": "email-016",
+    "subject": "Fulbright Master's & PhD Scholarship Announcement 2027",
+    "from": "fulbright@usefp.org",
+    "date": "2026-08-05T10:00:00Z",
+    "body": "Subject: Fulbright Master's & PhD Scholarship Announcement 2027\nFrom: fulbright@usefp.org\n\nDear Academic Community,\nUSEFP announces the Fulbright Scholarship Program for Master's and PhD studies in the United States.\nFully funded: Tuition, airfare, living stipend, health insurance.\nCGPA Requirement: 3.0+ for Master's, 3.5+ for PhD.\nDeadline: May 11, 2027.\nApply: https://usefp.org/fulbright"
+  },
+  {
+    "id": "email-017",
+    "subject": "DevFest Lahore 2026 – Speaker & Attendee Registration",
+    "from": "gdg@lahore.dev",
+    "date": "2026-08-04T13:45:00Z",
+    "body": "Subject: DevFest Lahore 2026 – Speaker & Attendee Registration\nFrom: gdg@lahore.dev\n\nJoin 1,000+ developers at DevFest Lahore 2026 hosted by Google Developer Group.\nDate: November 14, 2026.\nLocation: Faletti's Hotel, Lahore.\nFree student passes available.\nRegistration deadline: in 15 days.\nPasses: https://gdg.community.dev/devfest-lahore"
+  },
+  {
+    "id": "email-018",
+    "subject": "AWS Certified Solutions Architect Student Voucher Discount",
+    "from": "aws-educate@amazon.com",
+    "date": "2026-08-03T15:30:00Z",
+    "body": "Subject: AWS Certified Solutions Architect Student Voucher Discount\nFrom: aws-educate@amazon.com\n\nHi Student,\nClaim a 50% discount voucher for AWS Certified Solutions Architect Associate exam.\nEligible: Currently enrolled university students with valid edu email.\nDeadline: in 9 days.\nClaim link: https://aws.amazon.com/education/awseducate"
+  },
+  {
+    "id": "email-019",
+    "subject": "Invitation to Technical Interview – 10Pulls Software",
+    "from": "hr@10pulls.com",
+    "date": "2026-08-02T11:15:00Z",
+    "body": "Subject: Invitation to Technical Interview – 10Pulls Software\nFrom: hr@10pulls.com\n\nDear Candidate,\nThank you for applying to the Graduate Software Engineer role at 10Pulls.\nWe would like to invite you for a 45-minute technical interview via Google Meet.\nEvent Date: Friday, Aug 28, 2026 at 3:00 PM PKT.\nPlease confirm your availability by replying to this email.\nLink: https://meet.google.com/abc-defg-hij"
+  },
+  {
+    "id": "email-020",
+    "subject": "FYP Advisory Meeting Request – Dr. Ahmed Raza",
+    "from": "ahmed.raza@nu.edu.pk",
+    "date": "2026-08-01T09:30:00Z",
+    "body": "Subject: FYP Advisory Meeting Request – Dr. Ahmed Raza\nFrom: ahmed.raza@nu.edu.pk\n\nHi FYP Team,\nPlease meet me in my office (Room 204, CS Block) this Thursday at 2:00 PM to review your Sprint 2 deliverable and system design diagrams.\nEvent Date: Thursday Aug 27 at 2:00 PM."
+  },
+  {
+    "id": "email-021",
+    "subject": "Semester Registration & Course Add/Drop Deadline",
+    "from": "academic.office@nu.edu.pk",
+    "date": "2026-07-31T14:00:00Z",
+    "body": "Subject: Semester Registration & Course Add/Drop Deadline\nFrom: academic.office@nu.edu.pk\n\nDear Students,\nThis is a mandatory reminder that course add/drop for Fall 2026 closes strictly at midnight on Monday.\nDeadline: August 31, 2026 at 11:59 PM.\nPlease resolve fee clearance issues before the deadline.\nPortal: https://flexstudent.nu.edu.pk"
+  },
+  {
+    "id": "email-022",
+    "subject": "University Cafeteria New Menu – Try Our Special Biryani!",
+    "from": "cafeteria@nu.edu.pk",
+    "date": "2026-07-30T10:00:00Z",
+    "body": "Subject: University Cafeteria New Menu – Try Our Special Biryani!\nFrom: cafeteria@nu.edu.pk\n\nHey everyone,\nThe university cafeteria is launching its new spring menu next Monday.\nCome try our famous Dumpukht Biryani at a special introductory price.\nMain campus, Block B canteen. Open 8am – 8pm.\nManagement"
+  },
+  {
+    "id": "email-023",
+    "subject": "Lost: Black Backpack near CS Department",
+    "from": "student.help@nu.edu.pk",
+    "date": "2026-07-29T16:45:00Z",
+    "body": "Subject: Lost: Black Backpack near CS Department\nFrom: student.help@nu.edu.pk\n\nHi,\nI lost my black JanSport backpack near the CS department on Wednesday evening.\nIt has my laptop and notes inside. If found, please contact me at 0300-1234567.\nReward offered. Thank you."
+  },
+  {
+    "id": "email-024",
+    "subject": "Student Society Elections – Cast Your Vote Tomorrow!",
+    "from": "elections@nu.edu.pk",
+    "date": "2026-07-28T12:00:00Z",
+    "body": "Subject: Student Society Elections – Cast Your Vote Tomorrow!\nFrom: elections@nu.edu.pk\n\nDear Students,\nThe annual FAST Student Society elections will be held tomorrow.\nPlease come and vote for your class representatives.\nVoting booths open 9am–3pm in the main hall.\nElectoral Committee"
+  },
+  {
+    "id": "email-025",
+    "subject": "Library Fine Reminder",
+    "from": "library@nu.edu.pk",
+    "date": "2026-07-27T08:30:00Z",
+    "body": "Subject: Library Fine Reminder\nFrom: library@nu.edu.pk\n\nDear Student,\nThis is a reminder that you have an outstanding library fine of PKR 450.\nPlease clear this fine at the library counter before the end of the month to avoid account suspension.\nFAST-NU Library"
+  },
+  {
+    "id": "email-026",
+    "subject": "Seminar on Blockchain Technology – This Friday",
+    "from": "cs.events@nu.edu.pk",
+    "date": "2026-07-26T14:10:00Z",
+    "body": "Subject: Seminar on Blockchain Technology – This Friday\nFrom: cs.events@nu.edu.pk\n\nDear Students,\nThe CS Department is hosting a guest lecture on Blockchain Technology by Mr. Ahmed Raza (Ex-Google) this Friday at 2pm in Auditorium B.\nAttendance is voluntary. Refreshments will be served.\nCS Department"
+  },
+  {
+    "id": "email-027",
+    "subject": "Campus Placement Drive – NetSol Technologies",
+    "from": "placement@nu.edu.pk",
+    "date": "2026-07-25T11:20:00Z",
+    "body": "Subject: Campus Placement Drive – NetSol Technologies\nFrom: placement@nu.edu.pk\n\nAttention Final Year BSCS/BSSE Students,\nNetSol Technologies is conducting an on-campus placement drive for Software Engineers and QA Analysts.\nDate: Sept 5, 2026.\nLocation: Main Auditorium.\nRequired CGPA: 2.8+.\nDeadline to register CV: in 7 days.\nRegister: https://placement.nu.edu.pk"
+  },
+  {
+    "id": "email-028",
+    "subject": "Quantum Computing Workshop for Computer Science Students",
+    "from": "workshop@q-pakistan.org",
+    "date": "2026-07-24T15:00:00Z",
+    "body": "Subject: Quantum Computing Workshop for Computer Science Students\nFrom: workshop@q-pakistan.org\n\nHello Developers,\nQ-Pakistan presents a 2-day hands-on Quantum Computing workshop using Qiskit & Python.\nDate: Sept 12-13, 2026 (Online).\nFree for university students.\nDeadline: in 14 days.\nRegistration: https://q-pakistan.org/workshop"
+  },
+  {
+    "id": "email-029",
+    "subject": "Mobile App Development Competition – AppCon 2026",
+    "from": "appcon@devhub.pk",
+    "date": "2026-07-23T10:00:00Z",
+    "body": "Subject: Mobile App Development Competition – AppCon 2026\nFrom: appcon@devhub.pk\n\nBuild Flutter or React Native mobile apps and win PKR 150,000 cash prize!\nCategories: Social Impact, AI Utilities, EdTech.\nOpen to individual students and teams of up to 4.\nDeadline: in 20 days.\nSubmit: https://devhub.pk/appcon2026"
+  },
+  {
+    "id": "email-030",
+    "subject": "Technical Article Writing Contest – Win Mechanical Keyboards",
+    "from": "editor@techjournal.pk",
+    "date": "2026-07-22T13:30:00Z",
+    "body": "Subject: Technical Article Writing Contest – Win Mechanical Keyboards\nFrom: editor@techjournal.pk\n\nWrite a 1,200+ word article on Cloud Architecture, AI Agents, or Distributed Systems.\nTop 3 articles win custom mechanical keyboards + publication.\nDeadline: in 16 days.\nSubmit entry: https://techjournal.pk/contest"
+  },
+  {
+    "id": "email-031",
+    "subject": "Open Source Contribution Sprint – Mozilla Campus Club",
+    "from": "mozilla@nu.edu.pk",
+    "date": "2026-07-21T09:45:00Z",
+    "body": "Subject: Open Source Contribution Sprint – Mozilla Campus Club\nFrom: mozilla@nu.edu.pk\n\nJoin the Mozilla Campus Club for a weekend open-source sprint.\nLearn Git, GitHub Pull Requests, and contribute to Rust and JavaScript repositories.\nDate: Saturday Aug 29, 10am-4pm.\nFree swag and pizza.\nRegister: https://mozilla.nu.edu.pk"
+  },
+  {
+    "id": "email-032",
+    "subject": "Cyber Shield Defense Challenge 2026 – CTF Tournament",
+    "from": "ctf@cybershield.pk",
+    "date": "2026-07-20T17:00:00Z",
+    "body": "Subject: Cyber Shield Defense Challenge 2026 – CTF Tournament\nFrom: ctf@cybershield.pk\n\nTest your ethical hacking and reverse engineering skills in the Cyber Shield CTF.\nCategories: Web Security, Reverse Engineering, Cryptography, Forensics.\nPrize: PKR 300,000 + Security Cert Vouchers.\nDeadline: in 11 days.\nRegister: https://cybershield.pk/ctf"
+  },
+  {
+    "id": "email-033",
+    "subject": "Graduate Research Assistantship – LUMS SSE",
+    "from": "sse.research@lums.edu.pk",
+    "date": "2026-07-19T11:30:00Z",
+    "body": "Subject: Graduate Research Assistantship – LUMS SSE\nFrom: sse.research@lums.edu.pk\n\nLUMS School of Science and Engineering has open Research Assistant positions in Robotics and Computer Vision.\nRequirements: Python, C++, OpenCV, PyTorch, CGPA 3.3+.\nFunding: Full tuition coverage + PKR 50,000 monthly stipend.\nDeadline: in 22 days.\nApply: https://sse.lums.edu.pk/ra-positions"
+  },
+  {
+    "id": "email-034",
+    "subject": "Software QA Engineering Internship – Contour Software",
+    "from": "hr@contoursoftware.com",
+    "date": "2026-07-18T14:15:00Z",
+    "body": "Subject: Software QA Engineering Internship – Contour Software\nFrom: hr@contoursoftware.com\n\nContour Software is hiring QA Interns for automated testing (Selenium, Cypress, Python).\nLocation: Karachi / Lahore.\nStipend: PKR 30,000/month.\nDeadline: in 6 days.\nApply: https://contoursoftware.com/careers"
+  },
+  {
+    "id": "email-035",
+    "subject": "UI/UX Design Fellowship – Careem Design Studio",
+    "from": "design@careem.com",
+    "date": "2026-07-17T10:00:00Z",
+    "body": "Subject: UI/UX Design Fellowship – Careem Design Studio\nFrom: design@careem.com\n\nCareem Design Studio is offering a 4-month fellowship for student Product Designers.\nSkills: Figma, Wireframing, User Research, Prototyping.\nLocation: Remote / Dubai hub option.\nStipend: USD 800/month.\nDeadline: in 15 days.\nPortfolio submission: https://careem.design/fellowship"
+  },
+  {
+    "id": "email-036",
+    "subject": "Pitch Deck Competition – National Incubation Center Lahore",
+    "from": "nic@lahore.gov.pk",
+    "date": "2026-07-16T16:00:00Z",
+    "body": "Subject: Pitch Deck Competition – National Incubation Center Lahore\nFrom: nic@lahore.gov.pk\n\nSubmit your startup pitch deck to NIC Lahore for incubation + PKR 1,000,000 grant funding.\nOpen to student startups and young innovators.\nDeadline: in 19 days.\nApply: https://niclahore.pk/pitch"
+  },
+  {
+    "id": "email-037",
+    "subject": "Campus Sports Gala Registration Reminder",
+    "from": "sports@nu.edu.pk",
+    "date": "2026-07-15T09:00:00Z",
+    "body": "Subject: Campus Sports Gala Registration Reminder\nFrom: sports@nu.edu.pk\n\nReminder: Annual Sports Gala registration closes this Friday.\nEvents: Futsal, Cricket, Table Tennis, Badminton.\nRegister at sports complex desk.\nSports Committee"
+  },
+  {
+    "id": "email-038",
+    "subject": "Internship Application Status – TechCorp Inc.",
+    "from": "no-reply@techcorp.com",
+    "date": "2026-07-14T12:00:00Z",
+    "body": "Subject: Internship Application Status – TechCorp Inc.\nFrom: no-reply@techcorp.com\n\nDear Candidate,\nThank you for your interest in the Summer Internship position at TechCorp Inc.\nAfter careful review, we regret to inform you that we will not be moving forward with your application at this time due to high volume of applicants.\nWe wish you the best in your future endeavors.\nTechCorp Talent Team"
+  }
+]

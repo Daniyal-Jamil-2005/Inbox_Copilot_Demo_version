@@ -119,7 +119,13 @@ def root_health():
 _DEMO_DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "demo_data", "emails.json")
 
 def load_synthetic_emails() -> List[str]:
-    """Load 38+ synthetic demo emails from demo_data/emails.json."""
+    """Load 38+ synthetic demo emails cleanly from embedded module or file fallback."""
+    try:
+        from demo_emails import SYNTHETIC_EMAILS_DATA
+        return [item.get("body", "") for item in SYNTHETIC_EMAILS_DATA if item.get("body")]
+    except ImportError:
+        pass
+
     try:
         with open(_DEMO_DATA_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
