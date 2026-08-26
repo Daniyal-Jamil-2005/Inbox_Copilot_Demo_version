@@ -7,12 +7,15 @@
  */
 
 const getBaseURL = () => {
+  if (typeof window !== 'undefined') {
+    const customUrl = localStorage.getItem('REACT_APP_API_URL') || localStorage.getItem('VITE_API_URL');
+    if (customUrl && customUrl.trim()) {
+      return customUrl.trim().replace(/\/+$/, '');
+    }
+  }
   let url = process.env.REACT_APP_API_URL || process.env.VITE_API_URL;
   if (url && url.trim()) {
     return url.trim().replace(/\/+$/, '');
-  }
-  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-    return window.location.origin;
   }
   return 'http://localhost:8000';
 };
