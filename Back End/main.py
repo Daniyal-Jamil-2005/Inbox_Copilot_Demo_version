@@ -88,6 +88,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+@app.get("/health")
+def root_health():
+    return {
+        "status": "online",
+        "service": "Opportunity Inbox Copilot API",
+        "version": "1.2.0-demo"
+    }
+
 # ─────────────────────────────────────────────────────────────────────────────
 # LOAD SYNTHETIC DATASET
 # ─────────────────────────────────────────────────────────────────────────────
