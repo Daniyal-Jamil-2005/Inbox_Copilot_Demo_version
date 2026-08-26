@@ -86,7 +86,26 @@ function AppLayout({ children, activePage, setActivePage, stats }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <span style={{ fontSize: 10, fontFamily: 'monospace', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'flex', alignItems: 'center', gap: 6 }}>
             {isOnline && <div className="pulse-dot" style={{ width: 5, height: 5 }} />}
-            BACKEND: <span style={{ color: isOnline ? '#fff' : isOffline ? '#ffb4ab' : 'rgba(255,255,255,0.6)' }}>{backendStatus}</span>
+            BACKEND: <span
+              onClick={() => {
+                const current = localStorage.getItem('REACT_APP_API_URL') || localStorage.getItem('VITE_API_URL') || API_CONFIG.baseURL || '';
+                const input = window.prompt('Enter your live Backend URL (e.g. https://your-backend.vercel.app):', current);
+                if (input !== null && input.trim()) {
+                  const cleaned = input.trim().replace(/\/+$/, '');
+                  localStorage.setItem('REACT_APP_API_URL', cleaned);
+                  localStorage.setItem('VITE_API_URL', cleaned);
+                  window.location.reload();
+                }
+              }}
+              style={{
+                color: isOnline ? '#4ade80' : isOffline ? '#ffb4ab' : 'rgba(255,255,255,0.6)',
+                cursor: 'pointer',
+                textDecoration: isOffline ? 'underline' : 'none',
+              }}
+              title="Click to configure or change Backend URL"
+            >
+              {backendStatus}
+            </span>
           </span>
           {localStorage.getItem('inbox_copilot_user_name') && (
             <span style={{ fontSize: 10, fontFamily: 'monospace', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
