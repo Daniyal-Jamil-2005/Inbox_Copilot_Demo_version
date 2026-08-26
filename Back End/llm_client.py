@@ -34,8 +34,8 @@ def _load_classifier():
         threshold_data = json.load(open(os.path.join(_ML_DIR, "optimal_threshold.json")))
         _threshold  = threshold_data.get("threshold", 0.92)
         print(f"[ml] Email pre-classifier loaded (threshold={_threshold:.4f})")
-    except FileNotFoundError:
-        print("[ml] Pre-classifier not found — all emails will go to LLM (run ml/train_classifier.py)")
+    except Exception as exc:
+        print(f"[ml] Pre-classifier disabled ({exc}) — all emails will go directly to LLM")
 
 _load_classifier()
 
