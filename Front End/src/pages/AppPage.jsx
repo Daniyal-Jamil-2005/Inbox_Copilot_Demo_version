@@ -339,35 +339,29 @@ function ScanView({ onScanComplete }) {
     setSuccessMessage('');
     try {
       const res = await fetch(`${API_CONFIG.baseURL}${API_CONFIG.endpoints.sampleData}`);
-      if (!res.ok) throw new Error('Failed to fetch sample data');
+      if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to fetch sample data`);
       const data = await res.json();
       
-      // Populate profile fields from sample data
-      const sampleProfile = data.profile;
+      const sampleProfile = (data && data.profile) ? data.profile : {};
       setPf({
         degree: sampleProfile.degree || 'BSCS',
         semester: sampleProfile.semester || 6,
         cgpa: sampleProfile.cgpa || 3.4,
         location: sampleProfile.location_preference || 'Lahore',
-        skills: (sampleProfile.skills || []).join(', '),
-        types: (sampleProfile.preferred_opportunity_types || []).join(', '),
+        skills: Array.isArray(sampleProfile.skills) ? sampleProfile.skills.join(', ') : (sampleProfile.skills || 'Python, Machine Learning, AWS, React'),
+        types: Array.isArray(sampleProfile.preferred_opportunity_types) ? sampleProfile.preferred_opportunity_types.join(', ') : (sampleProfile.preferred_opportunity_types || 'internship, hackathon, scholarship'),
         experience: sampleProfile.past_experience || '',
         financial: sampleProfile.financial_need || false,
         totalSemesters: sampleProfile.total_semesters || 8,
       });
       
-      // Populate email text with sample emails
-      const emailsText = (data.emails || []).join('\n\n---\n\n');
+      const emailsText = (data && Array.isArray(data.emails)) ? data.emails.join('\n\n---\n\n') : '';
       setEmailText(emailsText);
-      
-      // Clear any selected files
       setSelectedFiles([]);
       if (fileRef.current) fileRef.current.value = '';
       
-      // Show success message
-      setSuccessMessage(`Successfully loaded ${data.email_count || 0} sample emails and demo profile!`);
-      
-      // Auto-hide success message after 5 seconds
+      const count = (data && data.email_count) || (data && Array.isArray(data.emails) && data.emails.length) || 0;
+      setSuccessMessage(`Successfully loaded ${count} sample emails and demo profile!`);
       setTimeout(() => setSuccessMessage(''), 5000);
     } catch (err) {
       setError('Failed to load sample data: ' + err.message);

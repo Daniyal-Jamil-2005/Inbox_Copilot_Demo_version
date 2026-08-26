@@ -252,6 +252,7 @@ def health():
     return {"status": "ok", "demo_mode": True}
 
 @app.get("/sample-data")
+@app.get("/api/sample-data")
 def get_sample_data():
     """Returns synthetic demo emails and demo profile."""
     emails = load_synthetic_emails()
