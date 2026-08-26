@@ -18,7 +18,7 @@ function AppLayout({ children, activePage, setActivePage, stats }) {
   useEffect(() => {
     const check = async () => {
       try {
-        const r = await fetch(`${API_CONFIG.baseURL}${API_CONFIG.endpoints.health}`, { signal: AbortSignal.timeout(3000) });
+        const r = await fetch(`${API_CONFIG.baseURL}${API_CONFIG.endpoints.health}`, { signal: AbortSignal.timeout(10000) });
         setBackendStatus(r.ok ? 'ONLINE' : 'ERROR');
       } catch { setBackendStatus('OFFLINE'); }
     };
