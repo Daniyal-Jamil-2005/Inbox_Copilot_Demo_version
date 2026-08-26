@@ -12,8 +12,20 @@ The three-stage cleaning process:
 Typical result: 9,000 token raw email → 150 token clean content
 """
 
-from bs4 import BeautifulSoup
-from email_reply_parser import EmailReplyParser
+try:
+    from bs4 import BeautifulSoup
+    HAS_BS4 = True
+except ImportError:
+    BeautifulSoup = None
+    HAS_BS4 = False
+
+try:
+    from email_reply_parser import EmailReplyParser
+    HAS_REPLY_PARSER = True
+except ImportError:
+    EmailReplyParser = None
+    HAS_REPLY_PARSER = False
+
 import re
 import logging
 
@@ -49,32 +61,33 @@ def clean_email_payload(raw_content: str, max_tokens: int = 3000) -> str:
         # ─────────────────────────────────────────────────────────────────────
         # STAGE 1: Nuke HTML/CSS and extract visible text
         # ─────────────────────────────────────────────────────────────────────
-        soup = BeautifulSoup(raw_content, "html.parser")
-        
-        # Remove script and style tags entirely (they contain no useful content)
-        for script_or_style in soup(["script", "style"]):
-            script_or_style.decompose()
-        
-        # Optional: Extract href URLs from links and append them as text
-        # This preserves application links that might only be in href attributes
-        for link in soup.find_all('a', href=True):
-            href = link.get('href', '')
-            # Only preserve http/https URLs (skip mailto:, tel:, etc.)
-            if href.startswith('http'):
-                # Append URL after link text if not already present
-                link_text = link.get_text()
-                if href not in link_text:
-                    link.string = f"{link_text} {href}"
-        
-        # Extract text with newlines preserved between elements
-        text = soup.get_text(separator="\n")
+        if HAS_BS4 and BeautifulSoup is not None:
+            soup = BeautifulSoup(raw_content, "html.parser")
+            
+            # Remove script and style tags entirely (they contain no useful content)
+            for script_or_style in soup(["script", "style"]):
+                script_or_style.decompose()
+            
+            # Optional: Extract href URLs from links and append them as text
+            for link in soup.find_all('a', href=True):
+                href = link.get('href', '')
+                if href.startswith('http'):
+                    link_text = link.get_text()
+                    if href not in link_text:
+                        link.string = f"{link_text} {href}"
+            
+            # Extract text with newlines preserved between elements
+            text = soup.get_text(separator="\n")
+        else:
+            # Fallback regex stripper
+            text = re.sub(r'<script.*?>.*?</script>', '', raw_content, flags=re.DOTALL | re.IGNORECASE)
+            text = re.sub(r'<style.*?>.*?</style>', '', text, flags=re.DOTALL | re.IGNORECASE)
+            text = re.sub(r'<[^>]+>', '\n', text)
         
         # ─────────────────────────────────────────────────────────────────────
         # STAGE 2: Strip previous replies in the thread
-        # This removes "On Tuesday, Bob wrote:" and everything after
-        # Only apply if the text looks like it has thread history
         # ─────────────────────────────────────────────────────────────────────
-        if any(marker in text for marker in ['On ', ' wrote:', '---', '> ']):
+        if HAS_REPLY_PARSER and EmailReplyParser is not None and any(marker in text for marker in ['On ', ' wrote:', '---', '> ']):
             fresh_text = EmailReplyParser.parse_reply(text)
         else:
             fresh_text = text
