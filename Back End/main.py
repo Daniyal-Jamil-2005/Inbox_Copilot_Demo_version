@@ -71,11 +71,9 @@ app = FastAPI(
 @app.middleware("http")
 async def vercel_path_normalization(request: Request, call_next):
     raw_path = request.scope.get("path", "")
-    for prefix in ["/api/index.py", "/api/index", "/api/main.py", "/api/main"]:
+    for prefix in ["/api/index.py/", "/api/index/", "/api/main.py/", "/api/main/"]:
         if raw_path.startswith(prefix):
-            new_path = raw_path[len(prefix):]
-            if not new_path or not new_path.startswith("/"):
-                new_path = "/" + new_path
+            new_path = raw_path[len(prefix) - 1:]
             request.scope["path"] = new_path
             break
     return await call_next(request)
