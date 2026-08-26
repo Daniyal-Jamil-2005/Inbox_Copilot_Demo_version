@@ -69,6 +69,18 @@ app = FastAPI(
 )
 
 @app.middleware("http")
+async def vercel_path_normalization(request: Request, call_next):
+    raw_path = request.scope.get("path", "")
+    for prefix in ["/api/index.py", "/api/index", "/api/main.py", "/api/main"]:
+        if raw_path.startswith(prefix):
+            new_path = raw_path[len(prefix):]
+            if not new_path or not new_path.startswith("/"):
+                new_path = "/" + new_path
+            request.scope["path"] = new_path
+            break
+    return await call_next(request)
+
+@app.middleware("http")
 async def rate_limit_middleware(request: Request, call_next):
     if request.method == "POST" and request.url.path in ["/process", "/process-files", "/process-with-analytics", "/scan-gmail", "/scan-outlook"]:
         client_ip = request.client.host if request.client else "127.0.0.1"
@@ -90,6 +102,10 @@ app.add_middleware(
 
 @app.get("/")
 @app.get("/health")
+@app.get("/api")
+@app.get("/api/health")
+@app.get("/api/index")
+@app.get("/api/index.py")
 def root_health():
     return {
         "status": "online",
